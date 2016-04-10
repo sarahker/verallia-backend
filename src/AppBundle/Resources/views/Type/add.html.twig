@@ -1,0 +1,19 @@
+
+{% block title %}
+  Ajouter un type
+{% endblock %}
+
+{% block body %}
+
+  <h2>Ajouter un type</h2>
+
+  {{ include("AppBundle:Type:form.html.twig") }}
+
+  <p>
+    <a href="{{ path('type_home') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour liste
+    </a>
+  </p>
+
+{% endblock %}

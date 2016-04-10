@@ -1,0 +1,42 @@
+
+{% block body %}
+
+  <p>
+    {% for message in app.session.flashbag.get('notice') %}
+      <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+  </p>
+  
+	<div class="well">
+
+        <p><b>Id : </b>{{ type.id }}<p>
+		<p><b>Code : </b>{{ type.code }}<p>
+		<p><b>Value : </b>{{ type.value }}<p>
+		<p><b>Grp : </b>{{ type.grp }}<p>
+
+	</div>
+
+
+  <p>
+    <a href="{{ path('type_home') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la liste
+    </a>
+
+    <a href="{{ path('type_edit', {'id': type.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-edit"></i>
+      Modifier le type
+    </a>
+
+    <a href="{{ path('type_clean', {'id': type.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-edit"></i>
+      Cleaner le type
+    </a>
+
+    <a href="{{ path('type_delete', {'id': type.id}) }}" class="btn btn-danger">
+      <i class="glyphicon glyphicon-trash"></i>
+      Supprimer le type
+    </a>
+  </p>
+
+{% endblock %}

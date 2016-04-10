@@ -1,0 +1,40 @@
+
+{% block body %}
+<h4>Liste des types</h4>
+
+	<table id="table" class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>Code</th>
+				<th>Libellé</th>
+				<th>Grp</th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+	    {% for type in listTypes %}
+	      <tr>
+	      	<td style="width:20px;"><a href="{{ path('type_view', {'id': type.id}) }}"><div class="glyphicon glyphicon-search"></div></a></td>
+	      	<td>{{ type.id }}</td>
+	      	<td>{{ type.code }}</td>
+	      	<td>{{ type.value }}</td>
+	      	<td>{{ type.grp }}</td>
+	    {% endfor %}
+
+		</tbody>
+
+	</table>
+
+ <a href="{{ path('type_add') }}" class="btn btn-default">Ajouter Type</a>
+
+<script>
+	
+  $(document).ready(function() {
+  	$('[data-toggle="tooltip"]').tooltip()
+  });
+</script>
+
+{% endblock %}
+

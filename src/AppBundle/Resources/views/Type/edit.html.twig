@@ -1,0 +1,19 @@
+
+{% block title %}
+  Edition du type
+{% endblock %}
+
+{% block body %}
+
+  <h2>Edition du type</h2>
+
+  {{ include("AppBundle:Type:form.html.twig") }}
+
+  <p>
+    <a href="{{ path('type_view', {'id': type.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour type
+    </a>
+  </p>
+
+{% endblock %}

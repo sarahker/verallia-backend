@@ -1,0 +1,27 @@
+
+{% block title %}
+  Supprimer un type
+{% endblock %}
+
+{% block body %}
+
+  <h2>Supprimer un type</h2>
+
+  <p>
+    Etes-vous certain de vouloir supprimer le type "{{ type.nom ~ " " ~ type.prenom }}" ?
+  </p>
+
+  {# On met l'id du type dans la route de l'action du formulaire #}
+  <form action="{{ path('type_delete', {'id': type.id}) }}" method="post">
+    <a href="{{ path('type_view', {'id': type.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour au type
+    </a>
+
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    
+    {# Ceci va générer le champ CSRF #}
+    {{ form_rest(form) }}
+  </form>
+
+{% endblock %}

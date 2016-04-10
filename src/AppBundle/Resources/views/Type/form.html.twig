@@ -1,0 +1,60 @@
+
+<div class="well">
+  {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {{ form_errors(form) }}
+
+    <div class="row">
+      <div class="col-md-6">
+
+        {# Code #}
+        <div class="form-group">
+          {{ form_label(form.code, "Code", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+          <div class="col-sm-8">
+            {{ form_widget(form.code, {'attr': {'class': 'form-control'}}) }}
+          </div>
+
+          {{ form_errors(form.code) }}
+        </div>
+
+
+        {# Libellé #}
+        <div class="form-group">
+          {{ form_label(form.value, "Value", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+          {{ form_errors(form.value) }}
+
+          <div class="col-sm-8">
+            {{ form_widget(form.value, {'attr': {'class': 'form-control'}}) }}
+          </div>
+        </div>
+
+
+
+        {# Grp #}
+        <div class="form-group">
+          {{ form_label(form.grp, "Grp", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+          {{ form_errors(form.grp) }}
+
+          <div class="col-sm-8">
+            {{ form_widget(form.grp, {'attr': {'class': 'form-control'}}) }}
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+  {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }} 
+
+  {{ form_rest(form) }}
+  
+  {{ form_end(form) }}
+
+</div>
+
+

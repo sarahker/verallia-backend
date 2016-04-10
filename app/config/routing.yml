@@ -1,0 +1,38 @@
+# API REST
+app_type_api:
+    resource: "@AppBundle/Controller/TypeRESTController.php"
+    type:   rest
+    prefix:   /api
+
+app_user_api:
+    resource: "@AppBundle/Controller/UserRESTController.php"
+    type:   rest
+    prefix:   /api
+
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+
+
+# TYPE
+type_home:
+    path:      /type
+    defaults:  { _controller: AppBundle:Type:index }
+
+type_add:
+    path:      /type/add
+    defaults:  { _controller: AppBundle:Type:add }
+
+type_view:
+    path:      /type/view/{id}
+    defaults:  { _controller: AppBundle:Type:view }
+
+type_edit:
+    path:      /type/edit/{id}
+    defaults:  { _controller: AppBundle:Type:edit }
+
+type_delete:
+    path:      /type/delete/{id}
+    defaults:  { _controller: AppBundle:Type:delete }
